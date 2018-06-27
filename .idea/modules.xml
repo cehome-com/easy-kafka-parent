@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/easy-kafka-common/easy-kafka-common.iml" filepath="$PROJECT_DIR$/easy-kafka-common/easy-kafka-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easy-kafka-parent.iml" filepath="$PROJECT_DIR$/easy-kafka-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easy-kafka-proxy/easy-kafka-proxy.iml" filepath="$PROJECT_DIR$/easy-kafka-proxy/easy-kafka-proxy.iml" />
+    </modules>
+  </component>
+</project>
