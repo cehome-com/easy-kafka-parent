@@ -45,16 +45,18 @@ public class KafkaConsumer implements Consumer{
             e.printStackTrace();
         }catch (InvocationTargetException e){
             e.printStackTrace();
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 
 
     @Override
-    public void subscribe(String... topic){
+    public void subscribe(String[] topic){
         try {
             if (version.startsWith("0.8")){
                 Method method = consumerClazz.getMethod("subscribe", String[].class);
-                method.invoke(consumerInstance, topic);
+                method.invoke(consumerInstance, (Object)topic);
             }else if (version.startsWith("0.9")){
                 Method method = consumerClazz.getMethod("subscribe", List.class);
                 method.invoke(consumerInstance, Arrays.asList(topic));
