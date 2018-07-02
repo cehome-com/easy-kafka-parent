@@ -33,6 +33,9 @@ public class KafkaConsumer implements Consumer{
         this.consumerClazz = standardKafkaClassLoader.findClass("org.apache.kafka.clients.consumer.KafkaConsumer");
         this.consumerRecordClazz = standardKafkaClassLoader.findClass("org.apache.kafka.clients.consumer.ConsumerRecord");
         this.consumerConstructor = consumerClazz.getConstructor(Properties.class);
+        if(version.startsWith(VersionEnum.KAFKA_VERSION_8.getValue())){
+            props.put("partition.assignment.strategy","roundrobin");
+        }
         this.consumerInstance = consumerConstructor.newInstance(props);
 
     }
