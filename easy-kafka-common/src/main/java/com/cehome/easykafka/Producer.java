@@ -8,8 +8,8 @@ package com.cehome.easykafka;
  **/
 public interface Producer {
 
-    public Object send(String topic,String key, String value) throws ClassNotFoundException;
+    public Object send(String topic,String key, String value) throws Exception;
 
-    public void close();
+    public void close() throws Exception;
 
 }

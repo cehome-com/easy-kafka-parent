@@ -48,30 +48,17 @@ public class KafkaProducer implements Producer{
 
     }
     @Override
-    public Object send(String topic, String key, String value){
-        try {
-            Object recordInstance = recordConstructor.newInstance(topic,key,value);
-            Method method = producerClazz.getMethod("send", recordClazz);
-            method.invoke(producerInstance,recordInstance);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+    public Object send(String topic, String key, String value) throws Exception{
+        Object recordInstance = recordConstructor.newInstance(topic,key,value);
+        Method method = producerClazz.getMethod("send", recordClazz);
+        method.invoke(producerInstance,recordInstance);
         return value;
     }
 
     @Override
-    public void close() {
-        Method method = null;
-        try {
-            method = producerClazz.getMethod("close");
-            method.invoke(producerInstance);
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        }catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        }
+    public void close() throws Exception{
+        Method method = producerClazz.getMethod("close");
+        method.invoke(producerInstance);
     }
 
 }

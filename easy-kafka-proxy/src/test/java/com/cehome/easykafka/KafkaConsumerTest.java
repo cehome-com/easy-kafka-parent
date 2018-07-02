@@ -20,7 +20,7 @@ public class KafkaConsumerTest {
     Logger logger = LoggerFactory.getLogger(KafkaConsumerTest.class);
 
     @Test
-    public void pollTest(){
+    public void pollTest() throws Exception{
         Properties props = new Properties();
         props.put("bootstrap.servers", "localhost:9094");
         props.put("group.id","test1");

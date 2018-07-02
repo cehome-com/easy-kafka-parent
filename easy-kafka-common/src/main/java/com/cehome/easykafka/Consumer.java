@@ -5,13 +5,15 @@ package com.cehome.easykafka;
  **/
 public interface Consumer {
 
-    public void createKafkaConsumer();
+    public void createKafkaConsumer() throws Exception;
 
-    public void subscribe(String... topic);
+    public void subscribe(String... topic) throws Exception;
 
 
     public Object poll(long timeout);
 
     public void commitSync();
+
+    public void close();
 
 }
