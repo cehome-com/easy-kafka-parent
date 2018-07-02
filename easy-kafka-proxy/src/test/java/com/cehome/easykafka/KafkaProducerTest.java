@@ -19,7 +19,7 @@ public class KafkaProducerTest {
     Logger logger = LoggerFactory.getLogger(KafkaProducerTest.class);
 
     @Test
-    public void sendTest(){
+    public void sendTest() throws Exception{
         Properties props = new Properties();
         props.put("bootstrap.servers", "localhost:9094");
         props.put("acks", "all");
